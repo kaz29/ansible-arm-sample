@@ -1,6 +1,6 @@
 ---
 
-- name: Create a subnet
+- name: Create subnet
   azure_rm_subnet:
     name: "{{ item.name }}"
     virtual_network_name: "{{ item.virtual_network_name }}"

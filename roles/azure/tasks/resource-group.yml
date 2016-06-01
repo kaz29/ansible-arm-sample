@@ -1,6 +1,6 @@
 ---
 
-- name: Create a resource group
+- name: Create resource group
   azure_rm_resourcegroup:
     name: "{{ item.name }}"
     location: "{{ item.region }}"

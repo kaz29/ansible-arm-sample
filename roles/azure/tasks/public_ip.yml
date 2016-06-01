@@ -1,6 +1,6 @@
 ---
 
-- name: Create a public ip address
+- name: Create public ip address
   azure_rm_publicipaddress:
     name: "{{ item.name }}"
     resource_group: "{{ item.resource_group }}"

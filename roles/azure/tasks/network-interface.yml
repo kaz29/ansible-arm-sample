@@ -1,6 +1,6 @@
 ---
 
-- name: Create a network interface
+- name: Create network interface
   azure_rm_networkinterface:
     name: "{{ item.name }}"
     resource_group: "{{ item.resource_group }}"
