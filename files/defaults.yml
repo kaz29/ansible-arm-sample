@@ -65,3 +65,5 @@ azure_storage_container:
     state: present
     resource_group: Testing
     storage_account_name: accsa1971eey
+    tags:
+      testing: testing
