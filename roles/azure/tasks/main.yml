@@ -20,3 +20,6 @@
 
 - include: storage-container.yml
   when: azure_storage_container is defined
+
+- include: virtualmachine.yml
+  when: azure_virtualmachine is defined

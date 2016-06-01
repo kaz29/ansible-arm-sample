@@ -67,3 +67,20 @@ azure_storage_container:
     storage_account_name: accsa1971eey
     tags:
       testing: testing
+
+azure_virtualmachine:
+  - name: AnsibleVM01
+    resource_group: Testing
+    vm_size: Standard_A0
+    storage_account: accsa1971eey
+    storage_container_name: vhds
+    network_interfaces: testnic1
+    admin_username: kaz
+#    ssh_key_data:
+    image:
+      offer: UbuntuServer
+      publisher: Canonical
+      sku: '14.04.2-LTS'
+      version: latest
+    tags:
+      testing: testing
