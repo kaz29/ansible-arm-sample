@@ -1,0 +1,67 @@
+---
+
+azure_resource_group:
+  - name: Testing
+    region: japanwest
+    state: present
+    tags:
+      testing: testing
+      delete: never
+
+azure_virtual_network:
+  - name: test
+    state: present
+    resource_group: Testing
+    address_prefixes_cidr:
+        - "10.1.0.0/16"
+    dns_servers: []
+#        - "127.0.0.1"
+#        - "127.0.0.2"
+    tags:
+        testing: testing
+        delete: on-exit
+
+azure_subnet:
+  - name: acctsub
+    state: present
+    virtual_network_name: test
+    resource_group: Testing
+    address_prefix_cidr: "10.1.2.0/24"
+
+azure_publicipaddress:
+  - name: ansibletestip
+    state: present
+    resource_group: Testing
+    allocation_method: Static
+    domain_name: ansibletestlinux
+    tags:
+        testing: testing
+        environment: Production
+
+azure_networkinterface:
+  - name: testnic1
+    state: present
+    resource_group: Testing
+    virtual_network_name: test
+    subnet_name: acctsub
+    security_group_name: 
+    public_ip_address_name: ansibletestip
+    private_ip_allocation_method: Static
+    private_ip_address: 10.1.2.10
+    tags:
+        testing: testing
+
+# storage account type : Premium_LRS, Standard_GRS, Standard_LRS, Standard_RAGRS, Standard_ZRS
+azure_storage_account:
+  - name: accsa1971eey
+    state: present
+    resource_group: Testing
+    type: Standard_LRS
+    tags:
+        testing: testing
+
+azure_storage_container:
+  - name: vhds
+    state: present
+    resource_group: Testing
+    storage_account_name: accsa1971eey

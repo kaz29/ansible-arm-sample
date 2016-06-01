@@ -1,0 +1,12 @@
+---
+
+- name: Create a public ip address
+  azure_rm_publicipaddress:
+    name: "{{ item.name }}"
+    resource_group: "{{ item.resource_group }}"
+    allocation_method: "{{ item.allocation_method }}"
+    domain_name: "{{ item.domain_name }}"
+    tags: "{{ item.tags }}"
+    state: "{{ item.state }}"
+  with_items:
+    - "{{ azure_publicipaddress }}"

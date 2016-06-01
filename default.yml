@@ -1,0 +1,9 @@
+---
+- name: ansible test
+  hosts: ansibletest
+  connection: local
+
+  roles:
+    - azure
+  vars_files:
+    - files/defaults.yml

@@ -1,0 +1,12 @@
+---
+
+# List of available regions
+#   centralus,eastasia,southeastasia,eastus,eastus2,westus,northcentralus,
+#   southcentralus,northeurope,westeurope,japaneast,japanwest,brazilsouth,
+#   australiasoutheast,australiaeast,westindia,southindia,centralindia,
+#   canadacentral,canadaeast
+
+
+#azure_resource_group:
+#  - name: 
+#    region: 

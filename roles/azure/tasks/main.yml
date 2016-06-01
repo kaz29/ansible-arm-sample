@@ -1,0 +1,22 @@
+---
+
+- include: resource-group.yml
+  when: azure_resource_group is defined
+
+- include: virtual-network.yml
+  when: azure_virtual_network is defined
+
+- include: subnet.yml
+  when: azure_subnet is defined
+
+- include: public_ip.yml
+  when: azure_publicipaddress is defined
+
+- include: network-interface.yml
+  when: azure_networkinterface is defined
+
+- include: storage-account.yml
+  when: azure_storage_account is defined
+
+- include: storage-container.yml
+  when: azure_storage_container is defined
