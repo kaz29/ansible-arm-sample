@@ -12,6 +12,9 @@
 - include: public_ip.yml
   when: azure_publicipaddress is defined
 
+- include: security-group.yml
+  when: azure_security_group is defined
+
 - include: network-interface.yml
   when: azure_networkinterface is defined
 
